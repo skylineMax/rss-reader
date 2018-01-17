@@ -1,0 +1,8 @@
+{
+  "name": "rss-reader",
+  "app_id": "1019d0c0",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
