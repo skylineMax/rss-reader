@@ -1,0 +1,26 @@
+
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title>
+    	Statictics
+    	<button ion-button class="close" (click)="close($event)"><ion-icon name="close"></ion-icon></button>
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div style="display: block; width: 300px;">
+	  <canvas baseChart
+	              [data]="doughnutChartData"
+	              [labels]="doughnutChartLabels"
+	              [chartType]="doughnutChartType"
+	              (chartHover)="chartHovered($event)"
+	              (chartClick)="chartClicked($event)">
+	        
+	   </canvas>
+	</div>
+</ion-content>

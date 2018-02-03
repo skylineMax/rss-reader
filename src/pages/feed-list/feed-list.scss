@@ -1,0 +1,31 @@
+page-feed-list {
+  #itemsCount {
+    right:0;
+  }
+
+  .feed-list {
+    background: #d1ffdc;
+    .feed-article {
+      position: relative;
+      height: auto;
+      background: #ffffff;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      border-top: 0px;
+      color: #000000;
+    }
+    
+    .article-title {
+      font-size: 100%;
+      font-weight: bold;
+      color: #000;
+    }
+  }
+ 
+  #feed-spinner {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    height: 100px;
+  }
+}

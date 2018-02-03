@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar secondary>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title *ngIf="!selectedFeed">Newest Articles</ion-title>
+    <ion-title>{{selectedFeed?.title}}
+      <ion-badge id="itemsCount" color="secondary">{{itemsCount}}</ion-badge> 
+    </ion-title> 
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content class="feed-list" padding>
+  <ion-spinner *ngIf="loading" id="feed-spinner"></ion-spinner>
+  <ion-list *ngIf="selectedFeed" class="spinner">
+    <ion-row *ngIf="">
+      <ion-col text-center>
+        You haven't yet added a feed.
+      </ion-col>
+    </ion-row>
+    <ion-item *ngFor="let item of articles"  
+              (click)="openArticle(item.link)"
+              class="feed-article">
+      <p class="article-title" [innerHTML]="item.title"></p>
+      <div>&nbsp;</div>
+      <p [innerHTML]="item.description"></p>
+      <div *ngIf="item.author">&nbsp;</div>
+      <p *ngIf="item.author">Author: {{item.author}}</p>
+      <button ion-button item-end (click)="presentChartStatictics($event)">Stat</button>  
+    </ion-item>
+  </ion-list>
+  <ion-row *ngIf="!selectedFeed">
+    <ion-col text-center>
+      You haven't yet added a feed.
+    </ion-col>
+  </ion-row>
+</ion-content>
